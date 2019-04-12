@@ -1,14 +1,30 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-header [ngClass]="{hiden:isHiden}">
+  
 </ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+    <ion-grid style="background-color:#31c27c">
+        <ion-row>
+         <ion-col col-2>
+            <button ion-button color="secondary" menuToggle class="left" no-border>
+              <ion-icon name="menu" style="font-size:3rem"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-8 class="title">
+            <button ion-button color="secondary" *ngFor="let tem of tabs;let ind = index" [ngClass]={active:isActive[ind]} (click)="chooseTab(ind)">{{tem}}</button>
+          </ion-col>
+          <!-- 右边按钮 --> 
+          <ion-col col-2 >
+              <button ion-button color="secondary" class="right">
+                <ion-icon name="add"  style="font-size:3rem"></ion-icon>
+              </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <ion-searchbar></ion-searchbar>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  <!-- <ion-nav [root]="target[index]"></ion-nav> -->
 </ion-content>
+

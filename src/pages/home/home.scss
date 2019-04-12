@@ -1,3 +1,27 @@
 page-home {
-
+  .button-ios{
+    margin: 0;
+    padding: 0;
+  }
+  .title{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .right,.left{
+    width: 100%;
+  }
+  .searchbar-ios{
+    background: rgba(0,0,0,0); 
+    min-height: 1.5rem;
+    .searchbar-search-icon{
+      top:12px;
+    }
+   }
+   .active{
+     color: #3a6af6;
+   }
+   .hiden{
+     display: none;
+   }
 }

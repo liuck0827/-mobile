@@ -1,1 +1,16 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mycontent" type="overlay" style="position: absolute;top:60px;">
+  <ion-content padding>
+    <img src="../assets/imgs/logo.png" alt="">
+    <ion-list>
+      <p>some menu content, could be list items</p>
+      <p>some menu content, could be list items</p>
+      <p>some menu content, could be list items</p>
+      <p>some menu content, could be list items</p>
+      <p>some menu content, could be list items</p>
+      <p>some menu content, could be list items</p>
+      <p>some menu content, could be list items</p>
+      <p>some menu content, could be list items</p>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

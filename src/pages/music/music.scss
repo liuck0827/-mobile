@@ -1,0 +1,13 @@
+page-music {
+  .toolbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    .icon{
+      font-size: 2rem;
+    }
+  }
+}

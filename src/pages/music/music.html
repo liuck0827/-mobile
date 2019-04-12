@@ -1,0 +1,14 @@
+<ion-content>
+  <ion-slides *ngIf="banner.length>0" autoplay="2500" loop pager style="height:160px">
+    <ion-slide *ngFor="let tem of banner">
+      <img [src]="tem.imageUrl" style="width:100% ;height: 100%;">
+    </ion-slide>
+  </ion-slides>
+  <!-- 分类导航栏 -->
+  <ul class="toolbar">
+    <li *ngFor="let tem of tabs; let i = index" (click)="toPage(i)">
+      <ion-icon [name]="icons[i]" color="secondary" class="icon"></ion-icon>
+      <p>{{tem}}</p>
+    </li>  
+  </ul>
+</ion-content>
