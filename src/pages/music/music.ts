@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,  Events} from 'ionic-angular';
+import { Component} from '@angular/core';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { ArtistPage } from '../artist/artist';
 import { RankPage } from '../rank/rank';
@@ -16,13 +16,13 @@ export class MusicPage {
   //轮播图
   banner = [];
   //导航栏
-  tabs = ['歌手','排行','分类歌单','电台','视频'];
+  tabs = ['歌手列表','排行','分类歌单','电台','视频'];
   icons = ['geshou','paihang','fenlei','ziyuan','shipin'];
   target = [ArtistPage,RankPage,ClassifyPage,RadioPage,MoviePage];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private http: HttpClient,
-              public ev:  Events) {
+              private http: HttpClient) {
+    
   }
 
   ionViewDidLoad() {
@@ -33,7 +33,8 @@ export class MusicPage {
   }
 
   toPage(index) {
-    this.ev.publish('hide',true);
-    this.navCtrl.push(this.target[index]);
+    this.navCtrl.parent.push(this.target[index],{
+      name: this.tabs[index]
+    });
   }
 }

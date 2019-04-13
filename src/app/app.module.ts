@@ -15,6 +15,7 @@ import { RankPage } from '../pages/rank/rank';
 import { ClassifyPage } from '../pages/classify/classify';
 import { RadioPage } from '../pages/radio/radio';
 import { MoviePage } from '../pages/movie/movie';
+import { SingersPage } from '../pages/singers/singers';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,15 @@ import { MoviePage } from '../pages/movie/movie';
     RankPage,
     ClassifyPage,
     RadioPage,
-    MoviePage
+    MoviePage,
+    SingersPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      backButtonText: ''
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +49,8 @@ import { MoviePage } from '../pages/movie/movie';
     RankPage,
     ClassifyPage,
     RadioPage,
-    MoviePage
+    MoviePage,
+    SingersPage
   ],
   providers: [
     StatusBar,
